@@ -21,13 +21,13 @@ body {
     display: grid;
     min-height: 100%;
     grid-template-areas:
-        "ti .. cn cn cn"
+        "ti .. .. .. cn"
         ".. re re re .."
         ".. re re re .."
-        ".. .. .. .. .."
+        ".. re re re .."
         ".. .. sb .. ..";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 10em 1fr 1fr;
+    grid-template-rows: minmax(50px, 1fr) 1fr 1fr 1fr;
+    grid-template-columns: minmax(50px, 1fr) minmax(50px, 1fr) 10em minmax(50px, 1fr) minmax(50px, 1fr);
 }
 
 #title {
@@ -55,6 +55,7 @@ body {
     max-width: 20em;
     flex-direction: column;
     font-size: 1.5rem;
+    margin-bottom: 1rem ;
 }
 
 #searchbox > * {
