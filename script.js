@@ -6,11 +6,12 @@ async function getWeatherFor(location) {
 }
 
 function updateResults() {
-    const search = document.getElementById("search");
-    const results = document.getElementById("results");
-    results.innerHTML();
+    const search = document.getElementById("city");
+    let location = search.value;
+    const cityName = document.getElementById("city-name");
+    cityName.textContent = `${location}`;
 }
 
 const searchButton = document.getElementById("search");
 searchButton.addEventListener("click", (event) => event.preventDefault()); // don't reload page
-searchButton.addEventListener("click", () => console.log("searched")); // 
+searchButton.addEventListener("click", () => updateResults());

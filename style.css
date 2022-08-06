@@ -21,7 +21,7 @@ body {
     display: grid;
     min-height: 100%;
     grid-template-areas:
-        "ti .. .. .. .."
+        "ti .. cn cn cn"
         ".. re re re .."
         ".. re re re .."
         ".. .. sb .. .."
@@ -33,6 +33,10 @@ body {
 #title {
     grid-area: ti;
     margin: 1rem;
+}
+
+#city-name {
+    grid-area: cn;
 }
 
 #results {
