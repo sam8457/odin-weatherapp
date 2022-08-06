@@ -5,7 +5,7 @@ async function getWeatherFor(location) {
     console.log(weatherResponse);
 }
 
-function updateResults() {
+function updateCityName() {
     const search = document.getElementById("city");
     let location = search.value;
     const cityName = document.getElementById("city-name");
@@ -13,5 +13,5 @@ function updateResults() {
 }
 
 const searchButton = document.getElementById("search");
-searchButton.addEventListener("click", (event) => event.preventDefault()); // don't reload page
-searchButton.addEventListener("click", () => updateResults());
+searchButton.addEventListener("click", (event) => event.preventDefault()); // don't reload page on click
+searchButton.addEventListener("click", () => updateCityName());
