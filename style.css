@@ -52,13 +52,13 @@ body {
     font-size: 5rem;
 
     height: 100%;
-    max-height: 20rem;
+    max-height: 25rem;
     width: 100%;
-    max-width: 35rem;
+    max-width: 40rem;
 
     display: grid;
     grid-template-rows: minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr);
-    grid-template-columns: minmax(40px, 1fr) minmax(40px, 2fr) minmax(40px, 1fr);
+    grid-template-columns: minmax(40px, 1fr) minmax(40px, 1.5fr) minmax(40px, 1fr);
     
     border: 0.13rem solid whitesmoke;
     border-radius: 1rem;
@@ -86,6 +86,7 @@ body {
     margin: 0.2rem 0 0 0;
 }
 #searchbox > label {
+    font-weight: bolder;
     align-self: flex-start;
 }
 #searchbox > input {
