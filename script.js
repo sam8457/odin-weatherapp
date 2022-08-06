@@ -12,11 +12,15 @@ async function getWeatherFor(location) {
     const resultsList = results.childNodes;
 
     // change temp/weather
-    resultsList[1 *2+1].textContent = weatherData.weather[0].main;
-    resultsList[2 *2+1].textContent = `${Math.round(weatherData.main.temp)}°F`;
-    resultsList[6 *2+1].textContent = `${Math.round(weatherData.main.temp_min)}°F`;
+    const weatherDescription = weatherData.weather[0].main;
+    const currentTemp = Math.round(weatherData.main.temp);
+    const hiTemp = Math.round(weatherData.main.temp_max);
+    const loTemp = Math.round(weatherData.main.temp_min);
+    resultsList[1 *2+1].textContent = weatherDescription;
+    resultsList[2 *2+1].textContent = `${currentTemp}°F`;
+    resultsList[6 *2+1].textContent = `${loTemp}°F`;
     resultsList[7 *2+1].textContent = "—";
-    resultsList[8 *2+1].textContent = `${Math.round(weatherData.main.temp_max)}°F`;
+    resultsList[8 *2+1].textContent = `${hiTemp}°F`;
 
     // change days
     const currentDate = new Date();
@@ -33,9 +37,9 @@ async function getWeatherFor(location) {
         "Rain":"./Images/rainy_FILL0_wght400_GRAD0_opsz48.svg",
         "Thunderstorm":"./Images/thunderstorm_FILL0_wght400_GRAD0_opsz48.svg",
         "Snow":"./Images/cloudy_snowing_FILL0_wght400_GRAD0_opsz48.svg",
-        "Cloudy":"./Images/cloudy_FILL0_wght400_GRAD0_opsz48.svg",
+        "Clouds":"./Images/cloudy_FILL0_wght400_GRAD0_opsz48.svg",
     };
-    resultsList[0 *2+1].src // change source
+    resultsList[0 *2+1].src = weatherIcons[weatherDescription];
 }
 
 // for testing only
