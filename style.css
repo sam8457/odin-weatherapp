@@ -21,13 +21,13 @@ body {
     display: grid;
     min-height: 100%;
     grid-template-areas:
-        "ti .. .. .. cn"
+        "ti .. .. cn cn"
         "re re re re re"
         "re re re re re"
         "re re re re re"
         ".. .. sb .. ..";
-    grid-template-rows: minmax(50px, 1fr) 1fr 1fr 1fr;
-    grid-template-columns: minmax(50px, 1fr) minmax(50px, 1fr) 10em minmax(50px, 1fr) minmax(50px, 1fr);
+    grid-template-rows: minmax(40px, 1fr) 1fr 1fr 1fr;
+    grid-template-columns: minmax(40px, 1fr) minmax(40px, 1fr) 10em minmax(40px, 1fr) minmax(40px, 1fr);
 }
 
 #title {
@@ -37,9 +37,10 @@ body {
 
 #city-name {
     grid-area: cn;
-    margin: auto;
-    padding-right: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
     font-size: 4rem;
+    text-align: right;
 }
 
 
@@ -56,14 +57,15 @@ body {
     max-width: 35rem;
 
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr);
+    grid-template-columns: minmax(40px, 1fr) minmax(40px, 2fr) minmax(40px, 1fr);
     
     border: 0.13rem solid whitesmoke;
     border-radius: 1rem;
 }
 #results > * {
     margin: auto;
+    text-align: center;
 }
 #weather-icon {
     width: 5rem;

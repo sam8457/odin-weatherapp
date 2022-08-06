@@ -12,7 +12,13 @@ async function getWeatherFor(location) {
 }
 
 function updateResultsPane() {
+    const results = document.getElementById("results");
+    const resultsList = results.childNodes;
 
+    // nodelists indexed by [nth_element *2+1]
+    resultsList[1 *2+1].textContent = "Cloudy";
+    resultsList[2 *2+1].textContent = "23c";
+    resultsList[3 *2+1].textContent = "";
 }
 
 function updateCityName(location) {
@@ -25,5 +31,6 @@ searchButton.addEventListener("click", (event) => event.preventDefault()); // do
 searchButton.addEventListener("click", async () => {
     let location = getCityName();
     updateCityName(location);
+    updateResultsPane();
     // getWeatherFor(location);
 });
