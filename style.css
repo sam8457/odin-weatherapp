@@ -95,6 +95,20 @@ body {
 }
 #forecast {
     grid-area: fc;
+    font-size: 1rem;
+    width: 100%;
+}
+#forecast > div.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 5rem;
+}
+.day-container {
+    padding: 0 1rem;
+    border: 0.13rem solid whitesmoke;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
 #searchbox {

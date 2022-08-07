@@ -10,11 +10,10 @@ function updateCityName(location) {
 }
 
 async function getWeatherFor(location) {
-    // const weatherResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
-    // const weatherData = await weatherResponse.json();
+    const weatherResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
+    const weatherData = await weatherResponse.json();
 
-    // const weatherNameResult = weatherData.weather[0].main;
-    const weatherName = "Clear";
+    const weatherName = weatherData.weather[0].main;
     const weatherNameContent = document.querySelector("#weather-name > div.content");
     weatherNameContent.textContent = weatherName;
 
@@ -28,32 +27,36 @@ async function getWeatherFor(location) {
     const weatherIcon = document.querySelector("#weather-icon");
     weatherIcon.src = weatherIconsList[weatherName];
 
-    // const temp = Math.round(weatherData.main.temp);
-    const temp = "45";
-    const tempContent = document.querySelector("#temp > div.content");
-    tempContent.textContent = `${temp}°F`;
-
-    // const temp = Math.round(weatherData.main.feels_like);
-    const feelsLike = "40";
-    const feelsLikeContent = document.querySelector("#feels-like > div.content");
-    feelsLikeContent.textContent = `${feelsLike}°F`;
-
-    // const tempMin = Math.round(weatherData.main.temp_min);
-    const tempMin = "30";
-    const tempMinContent = document.querySelector("#temp-min > div.content");
-    tempMinContent.textContent = `${tempMin}°F`;
-
-    // const tempMax = Math.round(weatherData.main.temp_max);
-    const tempMax = "50";
-    const tempMaxContent = document.querySelector("#temp-max > div.content");
-    tempMaxContent.textContent = `${tempMax}°F`;
-
-    // const weatherDesc = weatherData.weather[0].description;
-    const weatherDesc = "few clouds";
+    const weatherDesc = weatherData.weather[0].description;
     const weatherDescContent = document.querySelector("#weather-desc > div.content");
     weatherDescContent.textContent = weatherDesc;
 
+    const temp = Math.round(weatherData.main.temp);
+    const tempContent = document.querySelector("#temp > div.content");
+    tempContent.textContent = `${temp}°F`;
+
+    const feelsLike = Math.round(weatherData.main.feels_like);
+    const feelsLikeContent = document.querySelector("#feels-like > div.content");
+    feelsLikeContent.textContent = `${feelsLike}°F`;
+
+    const tempMin = Math.round(weatherData.main.temp_min);
+    const tempMinContent = document.querySelector("#temp-min > div.content");
+    tempMinContent.textContent = `${tempMin}°F`;
+
+    const tempMax = Math.round(weatherData.main.temp_max);
+    const tempMaxContent = document.querySelector("#temp-max > div.content");
+    tempMaxContent.textContent = `${tempMax}°F`;
+
     
+
+    //const forecastResponse = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
+    //const forecastData = await forecastResponse.json();
+
+    `<div class="day-container">
+        <div class="weekday">Monday</div>
+        <img class="day-icon" src="./Images/sunny_FILL0_wght400_GRAD0_opsz48.svg">
+        <div class="day-temp">87f</div>
+    </div>`
 
     /*
     // change days
