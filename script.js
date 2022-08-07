@@ -19,10 +19,10 @@ async function getWeatherFor(location) {
 
     const weatherIconsList = {
         "Clear":"./Images/sunny_FILL0_wght400_GRAD0_opsz48.svg",
-        "Rain":"./Images/rainy_FILL0_wght400_GRAD0_opsz48.svg",
-        "Thunderstorm":"./Images/thunderstorm_FILL0_wght400_GRAD0_opsz48.svg",
-        "Snow":"./Images/cloudy_snowing_FILL0_wght400_GRAD0_opsz48.svg",
         "Clouds":"./Images/cloudy_FILL0_wght400_GRAD0_opsz48.svg",
+        "Rain":"./Images/rainy_FILL0_wght400_GRAD0_opsz48.svg",
+        "Snow":"./Images/cloudy_snowing_FILL0_wght400_GRAD0_opsz48.svg",
+        "Thunderstorm":"./Images/thunderstorm_FILL0_wght400_GRAD0_opsz48.svg",
     };
     const weatherIcon = document.querySelector("#weather-icon");
     weatherIcon.src = weatherIconsList[weatherName];
@@ -47,7 +47,14 @@ async function getWeatherFor(location) {
     const tempMaxContent = document.querySelector("#temp-max > div.content");
     tempMaxContent.textContent = `${tempMax}°F`;
 
-    
+    /*
+        TODO:
+            *Add forecast functionality
+            *Apace out forecast label or remove entirely
+            *Style searchbox and button for browser consitency (especially on chrome)
+            *Make it look nice
+            *Add windspeed, humidity
+    */
 
     //const forecastResponse = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
     //const forecastData = await forecastResponse.json();
