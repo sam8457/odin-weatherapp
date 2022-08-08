@@ -10,7 +10,7 @@ function updateCityName(location) {
 }
 
 async function getWeatherFor(location) {
-    const weatherResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
+    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
     const weatherData = await weatherResponse.json();
 
     const weatherName = weatherData.weather[0].main;
@@ -60,7 +60,7 @@ async function getWeatherFor(location) {
 }
 
 async function getForecastFor(location) {
-    const forecastResponse = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
+    const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=imperial&APPID=f540c46c7826a6b13837d9d586e2e08b`, {mode: "cors"});
     const forecastData = await forecastResponse.json();
 
     const forecastContainer = document.querySelector("#forecast > div.content");
