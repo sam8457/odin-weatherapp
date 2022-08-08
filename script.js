@@ -64,7 +64,7 @@ async function getForecastFor(location) {
     const forecastData = await forecastResponse.json();
 
     const forecastContainer = document.querySelector("#forecast > div.content");
-    forecastContainer.innerHTML = '';
+    forecastContainer.innerHTML = ''; // clear in case this is a second search
 
     const numForecastDays = 5;
     for (let i = 0; i < numForecastDays; i++) {
