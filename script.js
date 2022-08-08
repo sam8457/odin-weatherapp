@@ -117,7 +117,6 @@ searchButton.addEventListener("click", async () => {
 
 /*
     TODO:
-        *Add forecast functionality
         *Style searchbox and button for browser consitency (especially on chrome)
         *Make it look nice
         *Add windspeed, humidity

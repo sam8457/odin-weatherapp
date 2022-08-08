@@ -10,7 +10,17 @@
 </head>
 <body>
     <h1 id="title">WeatherApp</h1>
+
+    <form id="searchbox">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <!-- <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country"><br> -->
+        <button id="search">Search</button>
+    </form>
+
     <h2 id="city-name"></h2>
+
     <div id="results">
         <img id="weather-icon" src=""></img>
         <div id="weather-name">
@@ -30,11 +40,11 @@
             <div class="content"></div>
         </div>
         <div id="temp-min">
-            <div class="label">min</div>
+            <div class="label">low</div>
             <div class="content"></div>
         </div>
         <div id="temp-max">
-            <div class="label">max</div>
+            <div class="label">high</div>
             <div class="content"></div>
         </div>
 
@@ -69,12 +79,5 @@
             </div>
         </div>
     </div>
-    <form id="searchbox">
-        <label for="city">City:</label><br>
-        <input type="text" id="city" name="city"><br>
-        <!-- <label for="country">Country:</label><br>
-        <input type="text" id="country" name="country"><br> -->
-        <button id="search">Search</button>
-    </form>
 </body>
 </html>
